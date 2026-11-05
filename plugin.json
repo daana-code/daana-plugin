@@ -13,9 +13,11 @@
       "requires_local_executor": true,
       "interface": {
         "displayName": "Daana",
-        "shortDescription": "Declare, build and verify a Daana data platform",
+        "shortDescription": "Model, build and verify data",
         "longDescription": "21 workflows across interviewing, ingestion, DAS, DAB and DAR. Requires a separately installed Daana CLI and explicit project bindings; installation grants no warehouse authority.",
         "developerName": "Daana",
+        "websiteURL": "https://github.com/daana-code/daana-plugin",
+        "supportURL": "https://github.com/daana-code/daana-plugin/issues",
         "logo": "./assets/daana-icon.png",
         "composerIcon": "./assets/daana-icon.png",
         "category": "Developer Tools",

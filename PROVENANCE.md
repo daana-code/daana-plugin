@@ -40,8 +40,9 @@ merge. Candidate consumer pins are review dependencies, not a claim that the
 source project's installed package has already been replaced. Each consumer
 cutover is recorded separately; personal installations are untouched.
 
-Release-candidate icon `assets/daana-icon.png` is an unchanged copy of
-`app/apple-icon.png` from Daana's website repository, `daana-code/daana-web`,
-commit `b32786bbba468ed6746f4c10201a05aa47d37b78`. It is the existing 180×180
-brand icon, not a newly generated mark. MIT was selected for the plugin by
+Release icon `assets/daana-icon.png` is an unchanged copy of
+`public/android-chrome-512x512.png` from Daana's website repository, `daana-code/daana-web`,
+commit `014eaf17991b7cf22d2f90a2ffb73bed82243958`. It is the existing 512×512
+brand icon, not a newly generated mark. It is used only as an image in the plugin
+manifests; no bundled script or hook executes it. MIT was selected for the plugin by
 Siavoush on 2026-10-25; separately distributed executables retain their own licenses.

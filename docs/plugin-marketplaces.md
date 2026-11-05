@@ -43,9 +43,9 @@ Release owner checks:
   data-handling statements. Do not invent legal URLs or imply that warehouse
   queries never send data to a model/provider.
   The package's [data-handling page](plugin-data-handling.md) describes its
-  behavior; it is not an invented legal policy. OpenAI's privacy/terms URL
-  requirements for MCP servers do not establish the same requirement for this
-  skills-only package. Complete the fields actually required by the portal.
+  behavior; it is not an invented legal policy. The OpenAI portal on 2026-11-06
+  requested website, support, privacy and terms URLs for this skills-only package
+  too. Use approved public pages and complete the fields the actual portal requires.
 - Audit history and retained evidence before making any existing repository public.
   Internal workflows remain in old Git commits. Prefer a separately reviewed clean
   distribution repository populated from the archive, with attribution retained.
