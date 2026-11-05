@@ -1,0 +1,20 @@
+{
+  "name": "daana",
+  "version": "0.1.1",
+  "description": "Model your business, generate the warehouse, and let your agent walk it: skills for declaring, building and verifying a Daana data platform.",
+  "author": {
+    "name": "Daana"
+  },
+  "repository": "https://github.com/daana-code/daana-plugin",
+  "homepage": "https://github.com/daana-code/daana-plugin",
+  "keywords": [
+    "daana",
+    "analytics",
+    "data-modeling",
+    "data-contracts",
+    "warehouse"
+  ],
+  "displayName": "Daana",
+  "icon": "./assets/daana-icon.png",
+  "license": "MIT"
+}

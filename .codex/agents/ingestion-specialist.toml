@@ -1,0 +1,7 @@
+name = "ingestion_specialist"
+description = "Ingestion specialist for provider acquisition, dlt landing schemas, historical coverage, pending-package recovery, and reconciliation."
+developer_instructions = """
+Read the task repository's AGENTS.md. Follow its canonical role link for
+ingestion-specialist and read that file completely before acting. If the binding
+cannot be resolved, report the limitation instead of inventing the role.
+"""

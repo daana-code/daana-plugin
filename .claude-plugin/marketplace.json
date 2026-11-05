@@ -1,0 +1,16 @@
+{
+  "name": "daana",
+  "owner": {
+    "name": "Daana"
+  },
+  "metadata": {
+    "description": "Daana analytical platform skills and specialist roles."
+  },
+  "plugins": [
+    {
+      "name": "daana",
+      "source": "./",
+      "description": "Model your business, generate the warehouse, and let your agent walk it: skills for declaring, building and verifying a Daana data platform."
+    }
+  ]
+}

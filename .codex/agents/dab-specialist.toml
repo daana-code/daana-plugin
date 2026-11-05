@@ -1,0 +1,7 @@
+name = "dab_specialist"
+description = "DAB specialist for reviewed business models, source mappings, generated behavior, and scoped operation preparation."
+developer_instructions = """
+Read the task repository's AGENTS.md. Follow its canonical role link for
+dab-specialist and read that file completely before acting. If the binding
+cannot be resolved, report the limitation instead of inventing the role.
+"""

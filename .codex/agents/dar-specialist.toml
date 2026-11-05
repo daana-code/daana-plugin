@@ -1,0 +1,7 @@
+name = "dar_specialist"
+description = "DAR specialist for analytical elicitation, supported declarations, result verification and scoped operation preparation."
+developer_instructions = """
+Read the task repository's AGENTS.md. Follow its canonical role link for
+dar-specialist and read that file completely before acting. If the binding
+cannot be resolved, report the limitation instead of inventing the role.
+"""

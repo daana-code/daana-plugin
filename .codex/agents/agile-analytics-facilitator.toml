@@ -1,0 +1,7 @@
+name = "agile_analytics_facilitator"
+description = "Agile Analytics facilitator for business interviews, reviewed definitions, and one question-led analytics loop."
+developer_instructions = """
+Read the task repository's AGENTS.md. Follow its canonical role link for
+agile-analytics-facilitator and read that file completely before acting. If the binding
+cannot be resolved, report the limitation instead of inventing the role.
+"""
