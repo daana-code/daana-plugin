@@ -55,6 +55,15 @@ claim for the consuming repository or current client version. See
 - Grok has historical router-only evidence. Windows, new native adapters and
   new client/runtime combinations remain untested. Windows needs symlink support.
 
+For a deliberately selected tutorial directory without Git, Codex 0.167.0 also
+requires `--skip-git-repo-check`; it is unnecessary inside a Git repository. Add it
+to the read-only launch and use `--cd` to identify the intended review directory.
+This flag permits a non-Git working directory; it does not grant writes or replace
+`--sandbox read-only` and `approval_policy="never"`. It also does not authenticate
+the client: installation can succeed without login, while a model session needs
+valid host authentication. Current help confirms the flag; this is not a new
+sandbox-enforcement or authenticated-review claim.
+
 Verify actual launch restrictions before reviewer dispatch. Stop that dispatch
 if they cannot be established; continue independent permitted work. A later
 native-support claim needs its own selection and edit/shell/delegation controls.

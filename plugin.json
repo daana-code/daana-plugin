@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "daana",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Model your business, generate the warehouse, and let your agent walk it: skills for declaring, building and verifying a Daana data platform.",
   "author": {"name": "Daana"},
@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "Daana",
         "shortDescription": "Model, build and verify data",
-        "longDescription": "21 workflows across interviewing, ingestion, DAS, DAB and DAR. Requires a separately installed Daana CLI and explicit project bindings; installation grants no warehouse authority.",
+        "longDescription": "21 workflows across interviewing, ingestion, DAS, DAB and DAR. DAS uses project generators and Dataform; DAB and DAR execution require Daana CLI. Explicit project bindings are required; installation grants no warehouse authority.",
         "developerName": "Daana",
         "websiteURL": "https://github.com/daana-code/daana-plugin",
         "supportURL": "https://github.com/daana-code/daana-plugin/issues",

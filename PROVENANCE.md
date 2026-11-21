@@ -28,8 +28,8 @@ generality. Canonical role-target checks also address Peiman's packaging review.
 Neither addition alters runtime models, mappings, twelve root safety rules or
 the historical client-support qualifications.
 
-Historical review/evidence (private source access may be required; the collection
-does not depend on access to these records to run):
+Historical review/evidence, in a private repository (the collection does not
+depend on access to these records to run):
 
 - [Contribution disposition](https://github.com/dosemedbox/analytics/blob/d9982cdbab7c2013c93bf5c0db0ee096bd61630d/docs/superpowers/specs/2026-09-22-agent-harness-consolidation-design.md)
 - [Phase-2 evidence and accepted limitations](https://github.com/dosemedbox/analytics/blob/d9982cdbab7c2013c93bf5c0db0ee096bd61630d/docs/superpowers/plans/2026-09-22-harness-tool-independence.md)

@@ -2,7 +2,32 @@
 
 Model your business, generate the warehouse, and let your agent walk it: skills for declaring, building and verifying a Daana data platform.
 
-Requires a separately installed Daana CLI and project-local bindings.
+## Install
+
+Claude Code, from a terminal:
+
+```sh
+claude plugin marketplace add daana-code/daana-plugin
+claude plugin install daana@daana
+claude plugin list
+```
+
+Codex, from a terminal:
+
+```sh
+codex plugin marketplace add daana-code/daana-plugin
+codex plugin add daana@daana
+codex plugin list --json
+```
+
+Start a fresh client session after installation. The
+[installation guide](docs/plugin-usage.md) covers release pins, archives,
+project binding and removal.
+
+## About this package
+
+DAS skills use the project's own generator and Dataform; Daana CLI is needed
+for DAB and DAR execution. Each layer uses explicit project-local bindings.
 No credentials, CLI executable, hooks or MCP servers are bundled.
 
 User-authorized workflows may read and store personal or business data through
@@ -11,17 +36,12 @@ These external services are not bundled connectors. The host model/provider
 may process supplied files and tool results; Daana operates no plugin backend
 that receives or retains them. See [data handling](docs/plugin-data-handling.md).
 
-This is a generated distribution. Edit the canonical source in
-[daana-skills](https://github.com/daana-code/daana-skills), then rebuild;
-do not maintain a second editable copy here.
+This distribution is generated from Daana's private source repository.
+For bug reports or proposed improvements, [open a public issue](https://github.com/daana-code/daana-plugin/issues).
+Maintainers update
+the canonical source and regenerate the package; do not maintain a second
+editable copy here.
 
-Install in a Claude Code session:
-
-```text
-/plugin install daana --marketplace daana-code/daana-plugin
-```
-
-Start with [installation and setup](docs/plugin-usage.md).
 For distribution see [marketplaces](docs/plugin-marketplaces.md).
 Read the [release scope](docs/release-notes.md) and
 [data handling and support](docs/plugin-data-handling.md).

@@ -10,5 +10,7 @@ Then read the bundled [shared router](../../AGENTS.md) and the complete
 [canonical workflow](../../.agents/skills/dab/running-dab-operations/SKILL.md) before acting.
 Resolve these paths relative to this skill file, not the working directory.
 Follow the router's layer and dependency links. Missing project bindings block
-affected operations, not independent local reasoning. Daana CLI is a required
-external dependency; do not install it or change credentials implicitly.
+affected operations, not independent local reasoning. DAS skills use the
+project's own generator and Dataform; Daana CLI is needed for DAB and DAR
+execution. Ingestion uses the project-bound acquisition tools. Do not install
+tools or change credentials implicitly.

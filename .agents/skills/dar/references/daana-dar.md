@@ -14,11 +14,13 @@ available. Recognition of a kind or field does not prove every combination,
 dialect, emitted constraint or runtime behavior. Never invent a field from a
 donor's draft schema. Recheck when the executable, schema, backend or layout changes.
 
-Bind the input, DAB model, workspace, output location, dialect and backend.
-Check how the selected command finds its model: ancestor search does not resolve
-a sibling model merely because the repo contains one. A supported co-located
-fixture proves that layout only. Do not create a second editable model, relocate
-DAB or patch the compiler inside an authoring task to hide a binding gap.
+Bind the input, DAB model, workspace, output location, dialect and route:
+`dar apply` creates outputs on a deployed DAB; `dar generate` writes SQLX that
+the project's Dataform executes. Check how the selected command finds its
+model: ancestor search does not resolve a sibling model merely because the repo
+contains one. A supported co-located fixture proves that layout only. Do not
+create a second editable model, relocate DAB or patch the compiler inside an
+authoring task to hide a binding gap.
 
 Read the complete emitted plan: workspace targets and flags are intentions,
 not proof of resolved source/target coordinates. Check each object's qualified
@@ -28,8 +30,8 @@ blocks that deployment, not structural investigation of the generated result.
 ## Local structural lane
 
 After verifying these forms on the selected artifact, bind `DAR_BIN`,
-`DAR_CONFIG`, `DAR_INPUT`, `DAR_OUT`, `DAR_DIALECT` and `DAR_BACKEND` from task
-context. Use an explicit nonsecret config and fresh local output directory;
+`DAR_CONFIG`, `DAR_INPUT`, `DAR_OUT` and `DAR_DIALECT` from task context.
+Use an explicit nonsecret config and fresh local output directory;
 inspect ambient overrides without exposing their secret values. Do not borrow
 another client's global config. A scratch `{}` config can be sufficient for
 offline work only where that behavior has been verified.
@@ -37,18 +39,35 @@ offline work only where that behavior has been verified.
 ```bash
 "$DAR_BIN" --config "$DAR_CONFIG" --no-tui dar check "$DAR_INPUT" --format json
 "$DAR_BIN" --config "$DAR_CONFIG" --no-tui dar lint "$DAR_INPUT" --format json
-"$DAR_BIN" --config "$DAR_CONFIG" --no-tui dar compile "$DAR_INPUT" --dialect "$DAR_DIALECT" --backend "$DAR_BACKEND" --out "$DAR_OUT" --format json
+"$DAR_BIN" --config "$DAR_CONFIG" --no-tui dar apply "$DAR_INPUT" --dry-run --dialect "$DAR_DIALECT" --format json
 ```
 
-Capture stdout, stderr, exit and invocation; compile once per candidate/configuration,
-then inspect the saved plan and all emitted files. Do not keep recompiling to
-view another section. Avoid an output directory containing stale generated objects.
+For a Dataform target, the offline route writes SQLX from the local model:
+
+```bash
+"$DAR_BIN" --config "$DAR_CONFIG" --no-tui dar generate "$DAR_INPUT" --preview --out "$DAR_OUT" --format json
+```
+
+Bind the dialect explicitly: without a connection profile, `dar apply` falls
+back to a default dialect (postgres in the 1.0 release candidate), which can
+refuse declarations the target supports, such as output checks, which run only
+on DuckDB. `dar generate` refuses output checks; that refusal is a capability
+limit, not a defect in the declaration. Older evidence may name `dar compile`;
+in the 1.0 release candidate it is hidden and outside the public command set,
+so use the commands above.
+
+Capture stdout, stderr, exit and invocation; run each once per
+candidate/configuration, then inspect the saved plan and all emitted files.
+Do not keep rerunning to view another section. Avoid an output directory
+containing stale generated objects.
 If the output set changes, prove file ownership and non-reproduction before
 proposing removal under the project's deletion authority; do not delete by glob.
 
 `check` checks shape/graph; `lint` adds public-description checks; offline
-`compile` resolves the local model and emits a plan. They do not validate live
-DAB column existence, actual values, approved definitions or materialized grain.
+`dar apply --dry-run` compiles against the local model and prints the plan as
+JSON without connecting; `dar generate --preview` writes SQLX from the local
+model. They do not validate live DAB column existence, actual values, approved
+definitions or materialized grain.
 Inspect emitted checks: an accepted `checks` property is not evidence that
 assertions were emitted or executed. Likewise description presence is not meaning.
 

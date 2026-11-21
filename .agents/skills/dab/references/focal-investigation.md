@@ -31,7 +31,7 @@ at two times may be legitimate history, while identical effective/value tuples
 from two run instances may be replay/lineage duplication. Serving compaction can
 make both situations look identical in a latest view.
 
-Dialect: ANSI SQL — illustrative; translate only after resolving the bound schema
+Dialect: ANSI SQL, illustrative; translate only after resolving the bound schema
 and backend. This is a multiplicity diagnostic, not a project command:
 
 ```sql

@@ -82,9 +82,11 @@ to test. Record rows before/after, oldest post-run `ver_tmstp`, generated statem
 and exact pipeline windows. Counts alone cannot distinguish retained history from
 clear-and-re-emission. Confirm the metadata column meanings before using them.
 
-Once established, check a `row_st = 'C'` completion for every affected pipeline
-under the canonical `workflow_num_id`, alongside procedure identity and window
-boundaries. Completions only under another workflow identity are a lineage warning;
+Once established, check that every affected pipeline's run under the canonical
+`workflow_num_id` ended `row_st = 'C'` (completed) or `'S'` (skipped: nothing
+above the watermark, which does not move), alongside procedure identity and
+window boundaries. A skipped run loaded nothing; do not count it as missing or
+as loaded. Completions only under another workflow identity are a lineage warning;
 multiple IDs alone do not prove duplicate data. Compare duplicate populations and
 load/version stamps before proposing a repair. No diagnostic recipe grants repair
 authority, and no new workflow is a harmless selector until that behavior is proven.
@@ -98,8 +100,10 @@ levels; report each rather than promoting one to another.
 Resolve the dated inventory through **DAB evidence qualifications and refresh
 scope** in project context. Record observation date, full executable/image hash
 (including embedded engine/override), generator mode, configuration revision,
-command, result and omissions. Empty development version stamps do not identify
-an executable. Re-verify the affected mechanism when any of those inputs or source
+command, result and omissions. From the 1.0 release candidate, Daana CLI is one
+executable, `daana`, with its engine built in and one generator: its
+`daana --version` output and SHA-256 identify it. Empty development version
+stamps do not identify an executable. Re-verify the affected mechanism when any of those inputs or source
 semantics change; one local candidate does not establish another deployment.
 
 Keep source inspection, synthetic execution and actual deployment reconciliation

@@ -1,6 +1,6 @@
 ---
 name: validating-dar-structure
-description: Use when checking DAR declarations, local generated SQL or dependency/schema readiness, including cases where a successful compile may conceal missing deployed columns or invalid published object shape.
+description: Use when checking DAR declarations, local generated SQL or dependency/schema readiness, including cases where a successful dry-run plan or preview may conceal missing deployed columns or invalid published object shape.
 ---
 
 # Validate DAR structure without overstating it
@@ -12,8 +12,10 @@ artifact, config, layout and restrictions before choosing a lane.
 ## Lane 1: local, credential-free
 
 1. Establish the baseline, expected diff classes and approved design. Run the
-   bound shape/graph check, lint and offline compile, capturing exits and complete
-   output. Compile once per candidate/configuration to a fresh output path.
+   bound shape/graph check, lint and offline compile (the reference's
+   `dar apply --dry-run` plan or `dar generate --preview` SQLX), capturing exits
+   and complete output. Compile once per candidate/configuration to a fresh
+   output path.
 2. Inspect all published objects and dependency closure: actual source/target
    coordinates, expected columns/types/names, grain-sensitive joins, order/ties,
    interval endpoints, descriptions and whether declared checks are emitted.

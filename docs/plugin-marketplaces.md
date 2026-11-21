@@ -1,9 +1,10 @@
 # Distribute Daana: catalogs and public directories
 
-Checked against official documentation on 2026-11-06. Client catalogs, workspace
-distribution and public directory listings are different release actions. None
-has been published by building these packages. `daana` is our manifest ID, not a
-claim that a public listing name has been reserved.
+This page is for release maintainers. For installation and first use, read
+[plugin usage](plugin-usage.md). Client catalogs, workspace distribution and
+public directory listings are different release actions; a successful build does
+not publish a directory listing. Directory procedures were checked against
+official documentation on 2026-11-06; verify current requirements when submitting.
 
 ## Build and release checklist
 
@@ -21,13 +22,12 @@ The output directory must not exist. It contains two deterministic ZIPs,
 each host chooses its manifest. The builder includes only the declared runtime
 files, not the repository's history or review records.
 
-The chosen distribution destination is
-[`daana-code/daana-plugin`](https://github.com/daana-code/daana-plugin), created
-privately on 2026-10-25 with owner authorization. On 2026-11-06 Siavoush authorized
-completion of the release PR, clean public distribution and both portal
-submissions. Populate it only from the reviewed archive, without importing source
-history. `daana-code/daana-skills` remains the single editable source and stays private.
-Portal acceptance is recorded separately from the GitHub release.
+The public distribution is
+[`daana-code/daana-plugin`](https://github.com/daana-code/daana-plugin). Populate it
+from the reviewed archive, without importing source history. The private
+`daana-code/daana-skills` repository is the single editable source. Record directory
+acceptance separately from the GitHub release; historical publication approvals
+belong in the release record, not in consumer installation instructions.
 
 Release owner checks:
 
@@ -37,11 +37,11 @@ Release owner checks:
 - Test installation from the actual archive in each client and one useful task
   with the intended project's bindings. Static checks are not task evidence.
 - Verify that the archive includes the [MIT License](../LICENSE) and that both
-  manifests declare it. Siavoush selected MIT for the plugin on 2026-10-25;
-  Daana CLI remains separately licensed. Retain contribution attribution.
+  manifests declare it. Daana CLI remains separately licensed. Retain contribution
+  attribution.
 - Approve publisher identity, support contact, privacy/terms URLs, branding and
-  data-handling statements. Do not invent legal URLs or imply that warehouse
-  queries never send data to a model/provider.
+  data-handling statements. Do not invent legal URLs or imply that query
+  results stay out of the model provider's context.
   The package's [data-handling page](plugin-data-handling.md) describes its
   behavior; it is not an invented legal policy. The OpenAI portal on 2026-11-06
   requested website, support, privacy and terms URLs for this skills-only package
@@ -57,14 +57,12 @@ Release owner checks:
 Both catalog files are generated: `.claude-plugin/marketplace.json` and
 `.agents/plugins/marketplace.json`. They expose the root package as `daana@daana`.
 An authorized user can add a reviewed Git repository/ref instead of a local path.
-Once the reviewed release has populated the chosen distribution repository:
-
-```sh
-claude plugin marketplace add daana-code/daana-plugin
-claude plugin install daana@daana
-codex plugin marketplace add daana-code/daana-plugin --ref reviewed-tag
-codex plugin add daana@daana
-```
+The public distribution is available on GitHub. Follow the
+[GitHub installation route](plugin-usage.md#install-from-the-public-github-marketplace)
+or the [local archive route](plugin-usage.md#local-installation). The usage guide
+is the single source for installation commands, tested client versions and their
+evidence; the packager copies its install blocks into the generated public README.
+This page owns release and directory-submission procedure.
 
 For private catalogs, recipients need repository access. Do not embed tokens in
 catalog URLs. A clean export must keep both hidden manifest directories and the
@@ -86,7 +84,8 @@ be public before listing; do not flip this source repo's visibility casually.
 The package's `.claude-plugin/plugin.json` lives at the root of the exported
 repository, so the plugin path is the repository root. Directory validation has
 requirements beyond `claude plugin validate --strict`, including release metadata
-and licensing. Declare the local Daana CLI prerequisite and supported Claude Code
+and licensing. Declare Daana CLI as the DAB/DAR execution dependency, distinguish
+the project generator and Dataform used by DAS, and name the supported Claude Code
 surface clearly; do not advertise web-only execution as tested.
 
 Version 0.1.1 includes the website's existing 512×512 PNG brand asset, unchanged,

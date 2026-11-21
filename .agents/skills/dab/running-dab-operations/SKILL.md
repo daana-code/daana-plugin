@@ -14,8 +14,10 @@ Read **Coordinates and identity**, **Operational restrictions**, and
 **DAB evidence qualifications and refresh scope** in project context, resolving
 the selected tool's credentials before operation-packet preparation.
 Identify the exact outer/inner artifacts, generator mode, configuration revision,
-canonical workflow path/id and each connection namespace. Version text, selectors
-and a flag named dry-run do not establish behavior or a read-only boundary.
+canonical workflow path/id and each connection namespace. From the 1.0 release
+candidate, Daana CLI is one executable, `daana`, with its engine built in and one
+generator; record `daana --version` and the executable's SHA-256. Version text,
+selectors and a flag named dry-run do not establish behavior or a read-only boundary.
 
 Classify deploy, ordinary execute, refresh level or install. Derive refresh scope
 from the actual invocation and generated behavior, not the selected entity's name.
@@ -51,7 +53,8 @@ retry, broader refresh, metadata deletion or repaired configuration rerun.
 
 Use [verifying-dab-output](../verifying-dab-output/SKILL.md). Compare actual jobs,
 inserted rows and source/base/serving data to predictions. Reconcile canonical
-completed pipeline rows and procedure identity; for watermarked strategies verify
+pipeline rows, completed or skipped (nothing new; the watermark stays), and
+procedure identity; for watermarked strategies verify
 windows against prior completions and detect unplanned epoch restarts. Do not
 impose numeric-window continuity on strategies with legitimate NULL audit windows.
 Verify incoming and outgoing relationship effects independently; the refresh's

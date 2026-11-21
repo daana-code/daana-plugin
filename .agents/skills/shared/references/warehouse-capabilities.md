@@ -54,7 +54,7 @@ Official references: [dry-runs and estimates](https://docs.cloud.google.com/bigq
 ## SQL examples and real execution
 
 Reusable SQL illustrations use a portable standard subset and carry
-**Dialect: ANSI SQL — illustrative**. Resolve their example objects before use.
+**Dialect: ANSI SQL, illustrative**. Resolve their example objects before use.
 If a backend-only mechanism has no portable expression, explain its required
 behavior in prose, then inspect the bound tool; do not invent ANSI syntax.
 

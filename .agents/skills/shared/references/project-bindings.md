@@ -15,6 +15,18 @@ does not activate a parked source or authorize another operation. Root/layer
 authorization rules remain mandatory; context supplies the actual restrictions
 and approval authority, not permission to bypass them.
 
+## First use: help create the binding
+
+If the task repository is known and its binding is missing, prepare the missing
+root instruction and context document from the local repository; do not make the
+user author them unaided. Preserve existing instructions. Use the
+[minimal setup starter](../../../../docs/plugin-usage.md#minimal-local-project-starter),
+fill only applicable sections with discovered paths/configuration, and label
+unknown capabilities or permissions. Ask only for facts the repository cannot
+supply, such as the owner and intended operation scope. Drafting this local index
+does not require a warehouse probe or authorize an operation. If the task
+repository itself is unknown, resolve that location before creating files.
+
 ## Binding contract
 
 The project context is a searchable Markdown index, not executable configuration.

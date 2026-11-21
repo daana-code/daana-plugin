@@ -131,9 +131,9 @@ Daana's three-layer distinction is the architectural contract:
 
 | Layer | Purpose | Boundary |
 |---|---|---|
-| **DAS — Data According to System** | Preserve source-shaped data for replay, audit, and debugging | Accept raw records, then enforce structural contracts at the staging boundary |
-| **DAB — Data According to Business** | Integrate, conform, define, and historize reusable business concepts | Remain source-agnostic and independent of any one dashboard |
-| **DAR — Data According to Requirements** | Shape dimensions, facts, metrics, and marts for a specific analytical use | Begin from a declared question and consume DAB, not operational source tables |
+| **DAS: Data according to System** | Preserve source-shaped data for replay, audit, and debugging | Accept raw records, then enforce structural contracts at the staging boundary |
+| **DAB: Data according to Business** | Integrate, conform, define, and historize reusable business concepts | Remain source-agnostic and independent of any one dashboard |
+| **DAR: Data according to Requirements** | Shape dimensions, facts, metrics, and marts for a specific analytical use | Begin from a declared question and consume DAB, not operational source tables |
 | **Review/presentation surface** | Make the question-led loop and its evidence visible | Project authoritative artifacts; never become a second definition, mapping, status or metric layer |
 
 DAB is reusable truth. DAR is a purposeful view of that truth. Reusing definitions
@@ -170,7 +170,7 @@ Whether the selected compiler emits/enforces that constraint is a separate check
 
 Historical questions require historical joins. A fact must join a Type 2 dimension
 using the fact's event timestamp between the dimension's validity boundaries. A
-current-state join can silently rewrite history—for example, attributing an old
+current-state join can silently rewrite history, for example by attributing an old
 event to a user's current status. Missing historical attributes may be the truthful
 answer; fallback or imputation is a business decision, not a harmless technical fix.
 
@@ -327,7 +327,7 @@ make these fields recoverable:
 |---|---|
 | Decision | What changes depending on the answer, and who decides |
 | Question | A complete, interrogative business question |
-| Status | Answered, open, or blocked—with route or blocker |
+| Status | Answered, open, or blocked, with route or blocker |
 | Claim | The shortest defensible answer |
 | Definition | Exact meaning of every ambiguous concept |
 | Population | Eligibility, exclusions, and identity basis |
@@ -397,8 +397,8 @@ Daana CLI documentation:
 - [Daana Model Description Language](https://docs.daana.dev/docs/dmdl)
 - [Model](https://docs.daana.dev/docs/dmdl/model)
 - [Understanding Daana Output](https://docs.daana.dev/docs/guides/understanding-daana-output)
-- [Chapter 7 — Building Your Analytics Layer](https://docs.daana.dev/docs/tutorial/07-analytics-layer)
-- [Chapter 6 — Going to Production](https://docs.daana.dev/docs/tutorial/06-going-to-production)
+- [Chapter 7: Reporting with DAR](https://docs.daana.dev/docs/tutorial/07-analytics-layer)
+- [Chapter 10: Going to production](https://docs.daana.dev/docs/tutorial/10-going-to-production)
 
 This playbook is a reusable synthesis, not a replacement for those sources. When
 the Daana guidance changes materially, update this document and record the review

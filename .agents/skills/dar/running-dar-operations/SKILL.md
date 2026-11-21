@@ -1,6 +1,6 @@
 ---
 name: running-dar-operations
-description: Use when preparing, executing, retrying or reconciling a Daana DAR warehouse operation after analytical meaning is approved. Local-only check, lint and compile use structural validation instead.
+description: Use when preparing, executing, retrying or reconciling a Daana DAR warehouse operation after analytical meaning is approved. Local-only check, lint, dry-run plans and SQLX previews use structural validation instead.
 ---
 
 # Prepare the exact operation, then respect its gate
@@ -15,7 +15,9 @@ is not authority for another run.
 
 1. Identify the approved spec and question, affected objects/dependencies,
    outer/inner executable identity, config, invocation principal, connection,
-   namespace and selected catalog/install mode. Check support against current
+   namespace and selected catalog/install mode. From the 1.0 release candidate,
+   Daana CLI is one executable, `daana`, with its engine built in; record
+   `daana --version` and the executable's SHA-256. Check support against current
    evidence, not a local source checkout's promise. Missing or parked inputs
    block the affected operation, not independent authoring.
 2. Capture the candidate plan once through the permitted lane. Inspect every

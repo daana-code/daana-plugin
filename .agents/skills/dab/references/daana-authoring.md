@@ -17,8 +17,8 @@ An attribute with `effective_timestamp: true` requests companion timestamp
 storage. A mapping's `attribute_effective_timestamp_expression` requires that
 model support; a checker may report `invalid-eff-tmstp-expression` otherwise.
 Choose independent attribute time deliberately, not from a blanket true policy.
-For compilers using grouped typed storage, a group permits at most one member per
-storage type and the time declaration belongs to the group parent, not children.
+An atomic context declared with `group:` holds at most one attribute of each
+type, and its time declaration belongs to the group parent, not its children.
 Check generated fields/checker behavior when the compiler changes.
 
 `allow_multiple_identifiers` is a mapping-group identity policy, not a model field
@@ -31,7 +31,9 @@ mapping-group level; accepted unknown or table-level fields may be ignored.
 Bind the installed binary, explicit config and model/mapping/workflow paths before
 forming commands. On CLIs exposing these options, `check model` is structural,
 `check mapping --skip-schema-validation` avoids warehouse schema access, and
-`check workflow` without `--source` avoids source validation. Confirm help/code
+`check workflow` without `--source` avoids source validation. With a `daana.yaml`,
+root `daana check` validates the selected workflow, model, mappings and target
+profile offline; it does not connect to source databases. Confirm help/code
 on the actual artifact; these are not universal safe invocations based on names.
 Connected checks are a different authorized operation. Where connection failures
 are warnings by default, select the supported strict failure mode and inspect

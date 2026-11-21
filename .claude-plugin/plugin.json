@@ -1,6 +1,6 @@
 {
   "name": "daana",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Model your business, generate the warehouse, and let your agent walk it: skills for declaring, building and verifying a Daana data platform.",
   "author": {
     "name": "Daana"

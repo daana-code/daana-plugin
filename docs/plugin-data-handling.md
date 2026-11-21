@@ -17,9 +17,16 @@ does not provision credentials or grant authority. Its instructions require
 explicit project bindings, identity checks and authorization for warehouse writes;
 instructions are not a substitute for the host's enforced permissions.
 
-For plugin support, contact [Daana](mailto:hello@getdaana.com). Include the plugin
-version, host version, affected workflow and a sanitized reproduction. Do not send
-credentials, customer rows, signed URLs or unredacted session logs.
+Daana CLI's own network use is described in its
+[licensing guide](https://docs.daana.dev/docs/guides/licensing#what-daana-sends-home).
+In the 1.0 release candidate, the CLI sends no usage data; it contacts the Daana
+license service only as that guide describes.
+
+Report plugin problems as a [public issue](https://github.com/daana-code/daana-plugin/issues).
+For help, ask in the [Daana community Slack](https://join.slack.com/t/daanacommunity/shared_invite/zt-4eq45w9s2-8Bg3QsGY5~kTBa_RZV0u3A)
+first, then write to [support@daana.dev](mailto:support@daana.dev). Include the
+plugin version, host version, affected workflow and a sanitized reproduction. Do
+not send credentials, customer rows, signed URLs or unredacted session logs.
 
 This page describes the package's behavior. It does not replace the host's or
 Daana CLI's terms, and it is not a claim of production-access isolation.

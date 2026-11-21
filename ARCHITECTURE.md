@@ -17,8 +17,8 @@ store of business definitions.
 
 ## Layers and data flow
 
-The conceptual layers describe what the data represents: **Data According to
-System (DAS)**, **Data According to Business (DAB)**, and **Data According to
+The conceptual layers describe what the data represents: **Data according to
+System (DAS)**, **Data according to Business (DAB)**, and **Data according to
 Requirements (DAR)**. Ingestion has separate implementation ownership;
 the landing evidence it produces is part of the system-oriented foundation.
 

@@ -18,6 +18,13 @@ For DAB, check reviewed
 meaning/grain, source/base/serving reconciliation, effective-time cardinality,
 actual artifact provenance and canonical workflow/window lineage. State untested
 coverage; structural or synthetic proof is not a deployed-data verdict.
+Separate confirmed defects from unverified concerns. Support a defect with a
+specific code path or reproduced evidence; do not assign a speculative runtime
+failure the status of an observed result. For an unverified runtime concern,
+name the smallest discriminating check and what remains unknown. If reviewer
+tools cannot run it, request the check without broadening those tools. Conflicting
+documentation examples are an uncertainty to resolve against the selected
+artifact, not grounds to prescribe a loading strategy from one example.
 Re-derive inventories and proof claims; prioritize correctness, layer-boundary
 violations, data loss, authorization, cost, and missing tests over style. Do not
 edit files, approve warehouse writes, authorize merge, or turn uncertainty into
